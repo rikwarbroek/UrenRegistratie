@@ -1,0 +1,159 @@
+﻿<Window x:Class="WpfApplication5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication5"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="473" Width="1321" SizeChanged="OnSizeChanged" >
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style x:Key="RoundCorner" TargetType="{x:Type Button}">
+
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="Padding" Value="1"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Grid x:Name="grid">
+                                <Border x:Name="border" CornerRadius="8" BorderBrush="Black" BorderThickness="2">
+                                    <Border.Background>
+                                        <RadialGradientBrush GradientOrigin="0.496,1.052">
+                                            <RadialGradientBrush.RelativeTransform>
+                                                <TransformGroup>
+                                                    <ScaleTransform CenterX="0.5" CenterY="0.5" 
+                                   ScaleX="1.5" ScaleY="1.5"/>
+                                                    <TranslateTransform X="0.02" Y="0.3"/>
+                                                </TransformGroup>
+                                            </RadialGradientBrush.RelativeTransform>
+                                            <GradientStop Offset="1" Color="#00000000"/>
+                                            <GradientStop Offset="0.3" Color="#FFFFFFFF"/>
+                                        </RadialGradientBrush>
+                                    </Border.Background>
+                                    <ContentPresenter HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         TextElement.FontWeight="Bold"></ContentPresenter>
+                                </Border>
+
+                            </Grid>
+                            <ControlTemplate.Triggers>
+
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" TargetName="border">
+                                        <Setter.Value>
+                                            <RadialGradientBrush GradientOrigin="0.496,1.052">
+                                                <RadialGradientBrush.RelativeTransform>
+                                                    <TransformGroup>
+                                                        <ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="1.5" ScaleY="1.5"/>
+                                                        <TranslateTransform X="0.02" Y="0.3"/>
+                                                    </TransformGroup>
+                                                </RadialGradientBrush.RelativeTransform>
+                                                <GradientStop Color="#00000000" Offset="1"/>
+                                                <GradientStop Color="#FF303030" Offset="0.3"/>
+                                            </RadialGradientBrush>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="BorderBrush" TargetName="border" Value="#FF33962B"/>
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter Property="Opacity" TargetName="grid" Value="0.25"/>
+                                </Trigger>
+
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="350"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="2" Grid.RowSpan="2">
+            <Calendar Name="Calendar" Visibility="{Binding CalendarHide}" VerticalAlignment="Center" Margin="10,10,10,246"/>
+        </Grid>
+        <Grid Grid.Column="0">
+            <TextBlock Grid.Row="0" Text="Project" Margin="10 0 0 0"></TextBlock>
+            <TextBlock Grid.Row="0" Text="Element" Margin="165 0 0 0"></TextBlock>
+        </Grid>
+        <ListBox x:Name="LijstDoos" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="-5 0" HorizontalContentAlignment="Stretch" BorderThickness="0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0 5 0 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="350"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Grid.Column="0" Text="{Binding ProjectName}"></TextBox>
+                            <TextBox Margin="5 0 0 0" Grid.Column="1" Text="{Binding Element}"></TextBox>
+                            <Button Name="Start" Click="Start_Click" Content="Start" Margin="5 0 0 0" Grid.Column="2"></Button>
+                            <Button Name="Stop" Click="Stop_Click" Content="Stop" Margin="5 0" Grid.Column="3"></Button>
+                        </Grid>
+                        <Grid Grid.Column="1" Margin="-1 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="7*"/>
+                                <ColumnDefinition Width="7*"/>
+                                <ColumnDefinition Width="7*"/>
+                                <ColumnDefinition Width="7*"/>
+                                <ColumnDefinition Width="7*"/>
+                                <ColumnDefinition Width="7*"/>
+                                <ColumnDefinition Width="7*"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0" BorderBrush="black" BorderThickness="0.5" Margin="0.2"></Border>
+                            <Border Grid.Column="1" BorderBrush="black" BorderThickness="0.5" Margin="0.2"></Border>
+                            <Border Grid.Column="2" BorderBrush="black" BorderThickness="0.5" Margin="0.2"></Border>
+                            <Border Grid.Column="3" BorderBrush="black" BorderThickness="0.5" Margin="0.2"></Border>
+                            <Border Grid.Column="4" BorderBrush="black" BorderThickness="0.5" Margin="0.2"></Border>
+                            <Border Grid.Column="5" BorderBrush="black" BorderThickness="0.5" Margin="0.2"></Border>
+                            <Border Grid.Column="6" BorderBrush="black" BorderThickness="0.5" Margin="0.2"></Border>
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="0"><Run Text="{Binding MyMonday}"/></TextBlock>
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"><Run Text="{Binding MyTuesday}"/></TextBlock>
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2"><Run Text="{Binding MyWednesday}"/></TextBlock>
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="3"><Run Text="{Binding MyThursday}"/></TextBlock>
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="4"><Run Text="{Binding MyFriday}"/></TextBlock>
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="5"><Run Text="{Binding MySaturday}"/></TextBlock>
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="6"><Run Text="{Binding MySunday}"/></TextBlock>
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Name="ButtonAdd" Panel.ZIndex="999" HorizontalAlignment="Left" Style="{StaticResource RoundCorner}" FontFamily="Segoe MDL2 Assets" Content="" FontSize="20" VerticalAlignment="Bottom" Grid.RowSpan="3" Margin="10" Opacity="0.5" Height="40" Width="40" Click="ButtonAdd_Click">
+        </Button>
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="7*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="0"><Run Text="Maandag"/></TextBlock>
+            <TextBlock x:Name="textBlock_Copy1" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"><Run Text="Dinsdag"/></TextBlock>
+            <TextBlock x:Name="textBlock_Copy2" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2"><Run Text="Woensdag"/></TextBlock>
+            <TextBlock x:Name="textBlock_Copy4" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="3"><Run Text="Donderdag"/></TextBlock>
+            <TextBlock x:Name="textBlock_Copy5" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="4"><Run Text="Vrijdag"/></TextBlock>
+            <TextBlock x:Name="textBlock_Copy6" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="5"><Run Text="Zaterdag"/></TextBlock>
+            <TextBlock x:Name="textBlock_Copy7" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="6"><Run Text="Zondag"/></TextBlock>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,16 @@
+c:\users\rik\documents\visual studio 2015\Projects\WpfApplication5\WpfApplication5\bin\Debug\WpfApplication5.exe.config
+c:\users\rik\documents\visual studio 2015\Projects\WpfApplication5\WpfApplication5\obj\Debug\WpfApplication5.csprojResolveAssemblyReference.cache
+c:\users\rik\documents\visual studio 2015\Projects\WpfApplication5\WpfApplication5\obj\Debug\MainWindow.g.cs
+c:\users\rik\documents\visual studio 2015\Projects\WpfApplication5\WpfApplication5\obj\Debug\App.g.cs
+c:\users\rik\documents\visual studio 2015\Projects\WpfApplication5\WpfApplication5\obj\Debug\WpfApplication5_MarkupCompile.cache
+c:\users\rik\documents\visual studio 2015\Projects\WpfApplication5\WpfApplication5\obj\Debug\WpfApplication5_MarkupCompile.lref
+c:\users\rik\documents\visual studio 2015\Projects\WpfApplication5\WpfApplication5\bin\Debug\WpfApplication5.exe
+c:\users\rik\documents\visual studio 2015\Projects\WpfApplication5\WpfApplication5\bin\Debug\WpfApplication5.pdb
+c:\users\rik\documents\visual studio 2015\Projects\WpfApplication5\WpfApplication5\obj\Debug\MainWindow.baml
+c:\users\rik\documents\visual studio 2015\Projects\WpfApplication5\WpfApplication5\obj\Debug\WpfApplication5.g.resources
+c:\users\rik\documents\visual studio 2015\Projects\WpfApplication5\WpfApplication5\obj\Debug\WpfApplication5.Properties.Resources.resources
+c:\users\rik\documents\visual studio 2015\Projects\WpfApplication5\WpfApplication5\obj\Debug\WpfApplication5.csproj.GenerateResource.Cache
+c:\users\rik\documents\visual studio 2015\Projects\WpfApplication5\WpfApplication5\obj\Debug\WpfApplication5.exe
+c:\users\rik\documents\visual studio 2015\Projects\WpfApplication5\WpfApplication5\obj\Debug\WpfApplication5.pdb
+C:\Users\rik\documents\visual studio 2015\Projects\WpfApplication5\WpfApplication5\obj\Debug\AddProjectWindow.g.cs
+C:\Users\rik\documents\visual studio 2015\Projects\WpfApplication5\WpfApplication5\obj\Debug\AddProjectWindow.baml

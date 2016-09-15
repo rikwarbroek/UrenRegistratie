@@ -1,0 +1,18 @@
+﻿<Window x:Class="WpfApplication5.AddProjectWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication5"
+        mc:Ignorable="d"
+        Title="AddProjectWindow" Height="300" Width="300">
+    <Grid>
+        <Button Click="OnCreateClick" x:Name="button" Content="Add Project" HorizontalAlignment="Left" Margin="105,175,0,0" VerticalAlignment="Top" Width="76"/>
+        <CheckBox x:Name="checkBox" Content="Privé" HorizontalAlignment="Left" Margin="204,175,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="86,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="23" Margin="86,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="86,31,0,0" TextWrapping="Wrap" Text="Project" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="86,99,0,0" TextWrapping="Wrap" Text="Element" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
